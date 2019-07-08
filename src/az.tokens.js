@@ -1,7 +1,5 @@
 ;(function (global, factory) {
-  if(!global.Az){
-    global.Az = {}
-  }
+  global.Az = global.Az || {}
   global.Az.Tokens = factory()
 }(this, function () { 'use strict';
   /** @namespace Az **/

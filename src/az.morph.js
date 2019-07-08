@@ -1,7 +1,5 @@
 ;(function (global, factory) {
-  if(!global.Az){
-    global.Az = {}
-  }
+  global.Az = global.Az || {}
   global.Az.Morph = factory(global.Az)
 }(this, function (Az) { 'use strict';
   /** @namespace Az **/

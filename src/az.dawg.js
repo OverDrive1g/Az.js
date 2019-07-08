@@ -1,7 +1,5 @@
 ;(function (global, factory) {
-  if(!global.Az){
-    global.Az = {}
-  }
+  global.Az = global.Az || {}
   global.Az.DAWG = factory(global.Az)
 }(this, function (Az) { 'use strict';
   var ROOT = 0,

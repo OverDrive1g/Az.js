@@ -1,6 +1,4 @@
 ;(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define('Az', factory) :
   global.Az = factory()
 }(this, function () { 'use strict';
   /** @namespace Az **/
@@ -34,8 +32,6 @@
 }));
 
 ;(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? (module.exports = module.exports || {}) && (module.exports.DAWG = factory(module.exports)) :
-  typeof define === 'function' && define.amd ? define('Az.DAWG', ['Az'], factory) :
   (global.Az = global.Az || {}) && (global.Az.DAWG = factory(global.Az))
 }(this, function (Az) { 'use strict';
   var ROOT = 0,
@@ -380,8 +376,6 @@
 }));
 
 ;(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? (module.exports = module.exports || {}) && (module.exports.Morph = factory(module.exports)) :
-  typeof define === 'function' && define.amd ? define('Az.Morph', ['Az', 'Az.DAWG'], factory) :
   (global.Az = global.Az || {}) && (global.Az.Morph = factory(global.Az))
 }(this, function (Az) { 'use strict';
   /** @namespace Az **/
@@ -1536,8 +1530,6 @@
 }));
 
 ;(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? (module.exports = module.exports || {}) && (module.exports.Syntax = factory(module.exports)) :
-  typeof define === 'function' && define.amd ? define('Az.Syntax', ['Az'], factory) :
   (global.Az = global.Az || {}) && (global.Az.Syntax = factory(global.Az))
 }(this, function (Az) { 'use strict';
   // TBD: Syntax analyzer
@@ -1548,8 +1540,6 @@
   return Syntax;
 }));
 ;(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? (module.exports = module.exports || {}) && (module.exports.Tokens = factory()) :
-  typeof define === 'function' && define.amd ? define('Az.Tokens', ['Az'], factory) :
   (global.Az = global.Az || {}) && (global.Az.Tokens = factory())
 }(this, function () { 'use strict';
   /** @namespace Az **/

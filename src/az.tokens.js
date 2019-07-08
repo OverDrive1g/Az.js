@@ -1,6 +1,4 @@
 ;(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? (module.exports = module.exports || {}) && (module.exports.Tokens = factory()) :
-  typeof define === 'function' && define.amd ? define('Az.Tokens', ['Az'], factory) :
   (global.Az = global.Az || {}) && (global.Az.Tokens = factory())
 }(this, function () { 'use strict';
   /** @namespace Az **/

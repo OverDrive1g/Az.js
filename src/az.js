@@ -4,40 +4,9 @@
   global.Az = factory()
 }(this, function () { 'use strict';
   /** @namespace Az **/
-  if (typeof require != 'undefined' && typeof exports === 'object' && typeof module !== 'undefined') {
-    var fs = require('fs');
-  }
 
   var Az = {
     load: function(url, responseType, callback) {
-      if (fs && fs.readFile) {
-        fs.readFile(url, { encoding: responseType == 'json' ? 'utf8' : null }, function (err, data) {
-          if (err) {
-            callback(err);
-            return;
-          }
-
-          if (responseType == 'json') {
-            callback(null, JSON.parse(data));
-          } else
-          if (responseType == 'arraybuffer') {
-            if (data.buffer) {
-              callback(null, data.buffer);
-            } else {
-              var ab = new ArrayBuffer(data.length);
-              var view = new Uint8Array(ab);
-              for (var i = 0; i < data.length; ++i) {
-                  view[i] = data[i];
-              }
-              callback(null, ab);
-            }
-          } else {
-            callback(new Error('Unknown responseType'));
-          }
-        });
-        return;
-      }
-
       var xhr = new XMLHttpRequest();
       xhr.open('GET', url, true);
       xhr.responseType = responseType;

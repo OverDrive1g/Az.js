@@ -1,5 +1,8 @@
 ;(function (global, factory) {
-  (global.Az = global.Az || {}) && (global.Az.Morph = factory(global.Az))
+  if(!global.Az){
+    global.Az = {}
+  }
+  global.Az.Morph = factory(global.Az)
 }(this, function (Az) { 'use strict';
   /** @namespace Az **/
   var words,

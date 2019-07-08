@@ -32,9 +32,7 @@
 }));
 
 ;(function (global, factory) {
-  if(!global.Az){
-    global.Az = {}
-  }
+  global.Az = global.Az || {}
   global.Az.DAWG = factory(global.Az)
 }(this, function (Az) { 'use strict';
   var ROOT = 0,
@@ -379,9 +377,7 @@
 }));
 
 ;(function (global, factory) {
-  if(!global.Az){
-    global.Az = {}
-  }
+  global.Az = global.Az || {}
   global.Az.Morph = factory(global.Az)
 }(this, function (Az) { 'use strict';
   /** @namespace Az **/
@@ -1536,9 +1532,7 @@
 }));
 
 ;(function (global, factory) {
-  if(!global.Az){
-    global.Az = {}
-  }
+  global.Az = global.Az || {}
   global.Az.Syntax = factory(global.Az)
 }(this, function (Az) { 'use strict';
   // TBD: Syntax analyzer
@@ -1549,9 +1543,7 @@
   return Syntax;
 }));
 ;(function (global, factory) {
-  if(!global.Az){
-    global.Az = {}
-  }
+  global.Az = global.Az || {}
   global.Az.Tokens = factory()
 }(this, function () { 'use strict';
   /** @namespace Az **/

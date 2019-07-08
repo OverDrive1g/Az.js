@@ -10,30 +10,31 @@
 
   var Az = {
     load: function(url, responseType, callback) {
-      if (fs) {
-        let data = fs.readFileSync(url, { encoding: responseType == 'json' ? 'utf8' : null })
-        if (!data) {
-          return;
-        }
-
-        if (responseType == 'json') {
-          callback(null, JSON.parse(data));
-        } else
-        if (responseType == 'arraybuffer') {
-          if (data.buffer) {
-            callback(null, data.buffer);
-          } else {
-            var ab = new ArrayBuffer(data.length);
-            var view = new Uint8Array(ab);
-            for (var i = 0; i < data.length; ++i) {
-                view[i] = data[i];
-            }
-            callback(null, ab);
+      if (fs && fs.readFile) {
+        fs.readFile(url, { encoding: responseType == 'json' ? 'utf8' : null }, function (err, data) {
+          if (err) {
+            callback(err);
+            return;
           }
-        } else {
-          callback(new Error('Unknown responseType'));
-        }
-        
+
+          if (responseType == 'json') {
+            callback(null, JSON.parse(data));
+          } else
+          if (responseType == 'arraybuffer') {
+            if (data.buffer) {
+              callback(null, data.buffer);
+            } else {
+              var ab = new ArrayBuffer(data.length);
+              var view = new Uint8Array(ab);
+              for (var i = 0; i < data.length; ++i) {
+                  view[i] = data[i];
+              }
+              callback(null, ab);
+            }
+          } else {
+            callback(new Error('Unknown responseType'));
+          }
+        });
         return;
       }
 
